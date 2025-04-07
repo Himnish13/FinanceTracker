@@ -1,120 +1,118 @@
-#sidebar {
-    height: 100vh;
-    width: 18.35rem;
-    background-color: white;
-    position: fixed;
-    top: 0;
-    left: -18.35rem; 
-    transition: left 0.4s linear;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
-  .nav {
-    height: 3rem;
-    background-color: rgb(44, 106, 240);
-    margin: 0px;
-    width: 100%;
-    padding-top: 1rem;
-    box-shadow: 0 1px 0.5rem black;
-    transition: padding-left 0.4s linear;
-    z-index: 999;
-  }
-  
-  body {
-    margin: 0px;
-    background-color: rgb(226, 225, 225);
-  }
-  
-  #side {
-    display: none;
-  }
-  svg {
-    height: 1.75rem;
-    width: 1.75rem;
-    margin-top: 0.05rem;
-    margin-left: 1.5rem;
-    cursor: pointer;
-  }
-  
-  #mix {
-    display: flex;
-  }
-  h2 {
-    font-weight: 400;
-    color: white;
-    margin-left: 1rem;
-    margin-top: 0;
-  }
-  
-  .show-sidebar #sidebar {
-    left: 0; 
-  }
-  
-  .show-sidebar .nav {
-    padding-left: 18.35rem;
-   
-  }
-  #Name{
-    height: 2.2rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.226);
-    font-size: 1.3rem;
-  }
-  h4{
-    margin-left: 2rem;
-    font-size: 1.5rem;
-  }
-.box{
-    margin: 0rem;
-    margin-top: 3rem;
-    cursor: pointer;
+body{
+ margin: 0;
 }
-  h3{
-    margin: 0.2rem;
-    margin-left: 1rem;
-    font-weight: 500;
-    font-size: 1.2rem;
-  }
-.box:hover{
-    color: rgb(44, 106, 240);
-} 
-svg:hover{
-    color: rgb(44, 106, 240);
-}  
-
-.Graph{
-  
+.Complete{
   display: flex;
-  margin-top: 10rem;
-  transition: left 0.1s linear;
+  justify-content: right;
 }
 
-.small{
+.SideBar{
+  background-color: rgb(13, 13, 94);
+  height: 100vh;
+  box-shadow: 0px 0px 5px black;
+  transition: width 0.4s ease-in-out;
+  position: fixed;
+  left: 0;
+}
+.SideBar.collapsed{
+  width: 4%;
+}
+.SideBar.expanded
+{
+  width: 15%;
+}
+.Main{
+  background-color: rgb(237, 237, 237);
+  height: 100vh;
+  width: 96%;
+  transition: width 0.4s ease-in-out;
+}
+.Main.collapsed{
+  width: 96%;
+}
+.Main.expanded{
+  width:85%;
+}
+.Nav{
+  height: 3rem;
+  background-color: white;
+  padding-left: 2%;
+  padding-top: 1rem;
+  display: flex;
+}
+.Nav h2{
+
+  margin: 0;
+}
+.Nav h3{
+  margin: 0;
+  margin-top: 0.3rem;
+  margin-left: 80%;
+  margin-right: 1%;
+}
+.icons{
+  margin-top: 1.5rem;
+}
+.SideBarButtons{
+  margin-top: 2rem;
+  margin-left: 0.8rem;
+}
+.expenso{
+  
+    margin-top: 0.8rem;
+    margin-left: 0.9rem;
+  
+}
+.sideButton{
+  margin-top: 1rem;
+  margin-left:11.8rem;
+  
+}
+.sideButton1{
+  margin-top: 1rem;
+  margin-left:1.8rem;
+}
+.Dashboard{
+  display: flex;
+}
+.Tag{
+  margin-top: 0.5rem;
+  display: flex;
+}
+ p{
+  margin: 0;
+  margin-top: 2.2rem;
+  margin-left: 0.8rem;
+  color: white;
+  font-size: 1.4rem;
+}
+.Tag p{
+  margin-top: 0.8rem;
+}
+
+svg:hover{
+  cursor: pointer;
+}
+
+
+
+
+
+.graphs{
+  display: flex;
+}
+.Monthly{
+  margin: 2rem;
+  background-color: white;
+  height: 30rem;
+  width: 50rem;
   border-radius: 1rem;
-  height: 25rem;
-   width: 38rem;
-   background-color: rgba(255, 255, 255, 0.824);
-   margin-left: 5rem;
-   transition: height 0.1s linear;
-   transition: width 0.1s linear;
-   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
-.small img{
-    height: 25rem;
-   width: 38rem;
-}
-.Big img{
-    margin-left: 12rem;
-  height: 30rem;
-   width: 48rem;
-}
-.Big{
-  margin-top: 3rem;
-  border-radius: 0.75rem;
-  height: 30rem;
-   width: 78rem;
-   background-color: rgba(255, 255, 255, 0.824);
-   margin-left: 6.5rem;
-   transition: height 0.1s linear;
-   transition: width 0.1s linear;
-   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+.Category{
+    margin: 2rem;
+    background-color: white;
+    height: 30rem;
+    width: 35rem;
+    margin-left: 0;
+    border-radius: 1rem;
 }
