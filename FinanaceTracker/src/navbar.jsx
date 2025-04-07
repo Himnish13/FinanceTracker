@@ -3,6 +3,18 @@ import { useState } from "react";
 export default function Nav() {
 
 const [flag,Set]=useState(false);
+const transactions = [
+  { date: '2025-04-01', category: 'Groceries', amount: 52.30, mode: 'Card', type: 'Expense' },
+  { date: '2025-04-02', category: 'Salary', amount: 1500.00, mode: 'Bank Transfer', type: 'Income' },
+  { date: '2025-04-03', category: 'Dining', amount: 27.80, mode: 'UPI', type: 'Expense' },
+  { date: '2025-04-03', category: 'Freelancing', amount: 400.00, mode: 'PayPal', type: 'Income' },
+  { date: '2025-04-04', category: 'Electricity Bill', amount: 120.45, mode: 'Card', type: 'Expense' },
+  { date: '2025-04-05', category: 'Movie', amount: 18.00, mode: 'Cash', type: 'Expense' },
+  { date: '2025-04-06', category: 'Gift', amount: 100.00, mode: 'Cash', type: 'Income' },
+  { date: '2025-04-06', category: 'Shopping', amount: 200.99, mode: 'Card', type: 'Expense' },
+  { date: '2025-04-07', category: 'Interest', amount: 35.50, mode: 'Bank Transfer', type: 'Income' },
+  { date: '2025-04-07', category: 'Petrol', amount: 65.75, mode: 'UPI', type: 'Expense' }
+];
 function Open() {
   setTimeout(() => {
     Set(true);
@@ -57,7 +69,7 @@ function Close()
        </div>
        </div>
       </div>
-      <div className={`Main ${flag ? "expanded" : "collapsed"}`}>
+      <div className="Main">
         <div className="Nav">
             <h2>Dashboard</h2>
             <h3>Himnish</h3>
@@ -67,14 +79,64 @@ function Close()
         <div className="Content">
            <div className="graphs">
                 <div className="Monthly">
-                    <h5>Monthly Report</h5>
-                    <img src="/Users/saihimnishchowdary/Desktop/monthly_spending_trends.png" alt="" />
+                    <h3>Monthly Report</h3>
+                    <img id="Monthly" src="monthly_spending_trends.png" alt="" />
                 </div>
 
                 <div className="Category">
-                    <h5>Category Chart</h5>
+                    <h3>Category Chart</h3>
+                    <img id="Category" src="category_pie_chart.png" alt="" />
                 </div>
            </div>
+        <div className="Data">
+        <div className="Info">
+             <div className="Money">
+             <div className="Income">
+                <h3>Income &nbsp;
+                  <svg fill="#000000" width="20px" height="20px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M277.675 981.521c5.657 0 10.24-4.583 10.24-10.24V499.514c0-5.651-4.588-10.24-10.24-10.24h-81.92c-5.652 0-10.24 4.589-10.24 10.24v471.767c0 5.657 4.583 10.24 10.24 10.24h81.92zm0 40.96h-81.92c-28.278 0-51.2-22.922-51.2-51.2V499.514c0-28.271 22.924-51.2 51.2-51.2h81.92c28.276 0 51.2 22.929 51.2 51.2v471.767c0 28.278-22.922 51.2-51.2 51.2zm275.456-40.96c5.657 0 10.24-4.583 10.24-10.24V408.777c0-5.657-4.583-10.24-10.24-10.24h-81.92a10.238 10.238 0 00-10.24 10.24v562.504c0 5.657 4.583 10.24 10.24 10.24h81.92zm0 40.96h-81.92c-28.278 0-51.2-22.922-51.2-51.2V408.777c0-28.278 22.922-51.2 51.2-51.2h81.92c28.278 0 51.2 22.922 51.2 51.2v562.504c0 28.278-22.922 51.2-51.2 51.2zm275.456-40.016c5.657 0 10.24-4.583 10.24-10.24V318.974c0-5.651-4.588-10.24-10.24-10.24h-81.92c-5.652 0-10.24 4.589-10.24 10.24v653.251c0 5.657 4.583 10.24 10.24 10.24h81.92zm0 40.96h-81.92c-28.278 0-51.2-22.922-51.2-51.2V318.974c0-28.271 22.924-51.2 51.2-51.2h81.92c28.276 0 51.2 22.929 51.2 51.2v653.251c0 28.278-22.922 51.2-51.2 51.2zM696.848 40.96l102.39.154c11.311.017 20.494-9.138 20.511-20.449S810.611.171 799.3.154L696.91 0c-11.311-.017-20.494 9.138-20.511 20.449s9.138 20.494 20.449 20.511z"></path><path d="M778.789 20.571l-.307 101.827c-.034 11.311 9.107 20.508 20.418 20.542s20.508-9.107 20.542-20.418l.307-101.827C819.783 9.384 810.642.187 799.331.153s-20.508 9.107-20.542 20.418z"></path><path d="M163.84 317.682h154.184a51.207 51.207 0 0036.211-14.999L457.208 199.71a10.263 10.263 0 017.237-3.003h159.754a51.235 51.235 0 0036.198-14.976l141.13-141.13c7.998-7.998 7.998-20.965 0-28.963s-20.965-7.998-28.963 0L631.447 152.755a10.265 10.265 0 01-7.248 2.992H464.445a51.226 51.226 0 00-36.201 14.999L325.271 273.719a10.244 10.244 0 01-7.248 3.003H163.839c-11.311 0-20.48 9.169-20.48 20.48s9.169 20.48 20.48 20.48z"></path></g></svg>
+                </h3>
+                <p>$3000</p>
+                <h5>amount of income</h5>
+                </div>
+                <div className="Expense">
+                <h3>Expense &nbsp;
+                <svg width="20px" height="20px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5169,14.3442l7.7047-4.801,10.2741,8.6883v12.5665l-5.9671,4.836v-11.8175l-12.0117-9.4722Z"/><path d="M26.0581,9.2578l5.8416-3.6121,10.4601,7.293-6.4328,4.9258"/><path d="M36.2041,28.6126l6.2959-5.1397"/><path d="M36.2041,25.9523l6.2959-5.1397"/><path d="M36.2041,23.292l6.2959-5.1397"/><path d="M36.2041,20.6317l6.2959-5.1397"/><path d="M35.3139,14.172l2.7236-2.077-1.865-1.2474-1.4987,1.1314"/><path d="M5.5,31.9538l13.5429,10.4006,7.4233-5.9106"/><path d="M5.5,29.2851l13.5429,10.4006,7.4233-5.9106"/><path d="M5.6039,26.6164l13.5429,10.4006,7.4233-5.9106"/><path d="M5.5892,23.9478l13.5429,10.4006,7.4233-5.9106"/><path d="M20.2345,23.7501c-.226,1.0274-1.6933,1.5535-3.2773,1.1753-1.5841-.3783-2.685-1.5178-2.459-2.5451.226-1.0274,1.6933-1.5535,3.2773-1.1753s2.685,1.5177,2.459,2.5451Z"/><path d="M15.0514,15.826l-9.2955,5.5946,13.3311,10.1174,7.6392-6.0147"/></svg>
+                </h3>
+                <p>$1880</p>
+                <h5>amount of expense</h5>
+                </div>
+             </div>
+              <div className="Goals">
+
+              </div>
+             
+           </div>
+           <div className="Transactions">
+            <h3>Transactions</h3>
+  <table className="transaction-table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Category</th>
+        <th>Amount</th>
+        <th>Mode</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      {transactions.map((txn, index) => (
+        <tr key={index}>
+          <td>{txn.date}</td>
+          <td>{txn.category}</td>
+          <td>${txn.amount.toFixed(2)}</td>
+          <td>{txn.mode}</td>
+          <td className={txn.type === 'Income' ? 'income' : 'expense'}>{txn.type}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+        </div>
         </div>
       </div>
     </div>
