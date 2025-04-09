@@ -1,6 +1,5 @@
 import Nav from './navbar'
-import './App.css'
-
+import './App.css';
 function App() {
 
   return (
