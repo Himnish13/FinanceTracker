@@ -8,7 +8,7 @@ body{
 }
 
 .SideBar{
-  background-color: rgb(49, 49, 56);
+ 
   height: 100vh;
   box-shadow: 0px 0px 5px black;
   transition: width 0.4s ease-in-out;
@@ -17,10 +17,12 @@ body{
   z-index: 10;
 }
 .SideBar.collapsed{
+  background-color: rgb(49, 49, 56);
   width: 4%;
 }
 .SideBar.expanded
 {
+  background-color: rgba(49, 49, 56, 0.836);
   width: 15%;
  
 }
@@ -96,8 +98,22 @@ h3{
 }
 
 
-
-
+.MixedCat{
+  display: flex;
+}
+.Double{
+  margin: 2rem;
+  margin-left: 0.6rem;
+  
+}
+.PieChart{
+  width: 38rem;
+  height: 30rem;
+  background-color: white;
+  border-radius: 1rem;
+  padding-top: 1rem;
+  margin-top: 1.6rem;
+}
 .graphs{
   display: flex;
 }
@@ -127,6 +143,22 @@ h3{
 #Category{
   height: 25rem;
   width: 33rem;
+}
+.Bargraph{
+  margin: 2rem;
+  background-color: rgb(255, 255, 255);
+  width: 40rem;
+  height: 43rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  padding-left: 0;
+}
+.Stacked{
+  background-color: white;
+  height: 30rem;
+  width: 35rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
 }
 .Data{
   display: flex;

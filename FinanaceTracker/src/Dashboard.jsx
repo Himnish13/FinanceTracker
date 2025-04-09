@@ -1,11 +1,8 @@
 import "./navbar.css";
 import React from 'react';
 import {
-  LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid
+  LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, PieChart, Pie, Cell, Legend
 } from 'recharts';
-import {
-    PieChart, Pie, Cell, Legend
-  } from 'recharts';
   
   const dataPie = [
     { name: 'Food', value: 8500 },
@@ -88,22 +85,22 @@ const goals = [
                 <div className="Monthly">
                     <h3>Monthly Report</h3>
                     <div className="p-4 bg-white shadow-md rounded-xl mspending">
-      <ResponsiveContainer width="90%" height={400}>
-        <LineChart data={data}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis
-            dataKey="month"
-            angle={-45}
-            textAnchor="end"
-            interval={0}
-            height={60}
-          />
-          <YAxis tickFormatter={(value) => `₹${value}`} />
-          <Tooltip formatter={(value) => `₹${value}`} />
-          <Line type="monotone" dataKey="spending" stroke="#007BFF" dot />
-        </LineChart>
-      </ResponsiveContainer>
-    </div>
+                        <ResponsiveContainer width="90%" height={400}>
+                            <LineChart data={data}>
+                            <CartesianGrid strokeDasharray="3 3" />
+                            <XAxis
+                                dataKey="month"
+                                angle={-45}
+                                textAnchor="end"
+                                interval={0}
+                                height={60}
+                            />
+                            <YAxis tickFormatter={(value) => `₹${value}`} />
+                            <Tooltip formatter={(value) => `₹${value}`} />
+                            <Line type="monotone" dataKey="spending" stroke="#007BFF" dot />
+                            </LineChart>
+                        </ResponsiveContainer>
+                    </div>
                 </div>
 
                 <div className="Category">
