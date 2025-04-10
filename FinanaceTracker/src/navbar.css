@@ -148,13 +148,14 @@ h3{
   margin: 2rem;
   background-color: rgb(255, 255, 255);
   width: 40rem;
-  height: 43rem;
+  height: 31rem;
   border-radius: 1rem;
   padding: 1rem;
   padding-left: 0;
 }
 .Stacked{
   background-color: white;
+  margin-top: 2rem;
   height: 30rem;
   width: 35rem;
   padding: 1.5rem;
@@ -335,11 +336,11 @@ h5{
   color: red;
   font-weight: 600;
 }
-/*my code*/
 .ModeChart, .CategoryChart {
   flex: 1;
   padding: 20px;
   margin: 20px;
+  margin-top: 0;
 }
 
 .bar-chart {
@@ -351,7 +352,7 @@ h5{
 }
 
 /* Style for the bar charts container (flexbox) */
-.graphs {
+.Graphs {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

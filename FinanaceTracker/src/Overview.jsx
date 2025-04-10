@@ -11,6 +11,19 @@ const data = [
     { category: 'Entertainment', spending: 7300 },
     { category: 'Others', spending: 3900 },
   ];
+  const transactions = [
+    { date: '2025-04-01', category: 'Groceries', amount: 52.30, mode: 'Card', type: 'Expense' },
+    { date: '2025-04-02', category: 'Salary', amount: 1500.00, mode: 'Bank Transfer', type: 'Income' },
+    { date: '2025-04-03', category: 'Dining', amount: 27.80, mode: 'UPI', type: 'Expense' },
+    { date: '2025-04-03', category: 'Freelancing', amount: 400.00, mode: 'PayPal', type: 'Income' },
+    { date: '2025-04-04', category: 'Electricity Bill', amount: 120.45, mode: 'Card', type: 'Expense' },
+    { date: '2025-04-05', category: 'Movie', amount: 18.00, mode: 'Cash', type: 'Expense' },
+    { date: '2025-04-06', category: 'Gift', amount: 100.00, mode: 'Cash', type: 'Income' },
+    { date: '2025-04-06', category: 'Shopping', amount: 200.99, mode: 'Card', type: 'Expense' },
+    { date: '2025-04-07', category: 'Interest', amount: 35.50, mode: 'Bank Transfer', type: 'Income' },
+    { date: '2025-04-07', category: 'Petrol', amount: 65.75, mode: 'UPI', type: 'Expense' }
+  ];
+  
   const dataPie = [
     { name: 'Food', value: 8500 },
     { name: 'Transportation', value: 12500 },
@@ -82,6 +95,33 @@ const data = [
     Entertainment: '#af7aa1',
     Others: '#ff9da7'
   };
+
+  const modeCount = transactions.reduce((acc, txn) => {
+    const mode = txn.mode;
+    acc[mode] = acc[mode] ? acc[mode] + 1 : 1;
+    return acc;
+  }, {});
+  
+  const modeData = Object.keys(modeCount).map(mode => ({
+    mode,
+    count: modeCount[mode]
+  }));
+  
+  const categoryTotals = transactions.reduce((acc, transaction) => {
+    const { category, amount } = transaction;
+    if (!acc[category]) {
+      acc[category] = 0;
+    }
+    acc[category] += amount;
+    return acc;
+  }, {});
+  
+  const categoryData = Object.entries(categoryTotals).map(([category, total]) => ({
+    category,
+    total
+  }));
+  
+  categoryData.sort((a, b) => a.total - b.total);
 export default function Over()
 {
     return (
@@ -97,7 +137,7 @@ export default function Over()
             <div className="MixedCat">
             <div className="Bargraph">
                 <h3>Category Wise Breakdown of expenses</h3>
-            <ResponsiveContainer width="100%" height={600}>
+            <ResponsiveContainer width="90%" height={450}>
             <BarChart
              layout="vertical"
              data={data}
@@ -113,7 +153,6 @@ export default function Over()
             </div>
            
            
-            <div className="Double">
             <div className="w-full h-[500px]  Stacked">
                             <h3>Category-wise spending over time</h3>
                         <ResponsiveContainer width="100%" height="90%">
@@ -136,33 +175,36 @@ export default function Over()
                     </AreaChart>
                 </ResponsiveContainer>
             </div>
-             <div className="PieChart">
-                <h3>Category PieChart</h3>
-                 <div className="p-4 bg-white shadow-md rounded-xl">
-                  <ResponsiveContainer width="100%" height="90%">
-                    <PieChart>
-                      <Pie
-                        data={dataPie}
-                        dataKey="value"
-                        nameKey="name"
-                        cx="50%"
-                        cy="50%"
-                        outerRadius={140}
-                        label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(1)}%`}
-                        
-                      >
-                        {data.map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                        ))}
-                      </Pie>
-                      <Tooltip formatter={(value) => `₹${value}`} />
-                      <Legend verticalAlign="bottom" height={36} />
-                    </PieChart>
-                  </ResponsiveContainer>
-                </div>
-                 </div>
             </div>
-            </div>
+           <div className="Graphs">
+           <div className="ModeChart">
+    <h3>Payment Mode Distribution</h3>
+    <div className="bar-chart">
+      <ResponsiveContainer width="100%" height={400}>
+        <BarChart data={modeData.sort((a, b) => a.count - b.count)} layout="vertical">
+          <YAxis type="category" dataKey="mode" />
+          <XAxis />
+          <Tooltip />
+          <Bar dataKey="count" fill="#FFDE4D" />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+  </div>
+
+  <div className="CategoryChart">
+    <h3>Category-wise Spending</h3>
+    <div className="bar-chart">
+      <ResponsiveContainer width="100%" height={400}>
+        <BarChart data={categoryData} layout="vertical">
+          <XAxis type="number" domain={['auto', 'auto']} />
+          <YAxis type="category" dataKey="category" />
+          <Tooltip />
+          <Bar dataKey="total" fill="#93cefa" />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+  </div>
+           </div>
             </div>
             </div>
         </>
