@@ -5,7 +5,7 @@ import {
 } from 'recharts';
   
   const dataPie = [
-    { name: 'Food', value: 85 },
+    { name: 'Food', value: 8500 },
     { name: 'Transportation', value: 12500 },
     { name: 'Health', value: 6200 },
     { name: 'Household', value: 9800 },
