@@ -6,8 +6,8 @@ import "./navbar.css";
 
 // Data for charts
 const dataPie = [
-  { name: 'Food', value: 85 },
-  { name: 'Transportation', value: 1285 },
+  { name: 'Food', value: 8500 },
+  { name: 'Transportation', value: 10500 },
   { name: 'Health', value: 6200 },
   { name: 'Household', value: 9800 },
   { name: 'Subscription', value: 4100 },
@@ -17,7 +17,7 @@ const dataPie = [
 ];
 
 const COLORS = [
-  "#FF6384", "#36A2E", "#FFCE56", "#4BC0C0",
+  "#FF6384", "#36A2D0", "#FFCE56", "#4BC0C0",
   "#9966FF", "#FF9F40", "#8DD1E1", "#C7CEEA"
 ];
 
