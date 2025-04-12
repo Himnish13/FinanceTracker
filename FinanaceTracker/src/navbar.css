@@ -335,3 +335,56 @@ h5{
   color: red;
   font-weight: 600;
 }
+/*my code*/
+.ModeChart, .CategoryChart {
+  flex: 1;
+  padding: 20px;
+  margin: 20px;
+}
+
+.bar-chart {
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+/* Style for the bar charts container (flexbox) */
+.graphs {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1200px) {
+  .graphs {
+    flex-direction: column;
+  }
+
+  .ModeChart, .CategoryChart {
+    width: 100%;
+  }
+}
+
+.bar-chart .recharts-cartesian-axis-tick text {
+  font-size: 12px;
+  color: #555;
+}
+
+/* Different colors for bars */
+.ModeChart .recharts-bar-rectangles .recharts-bar-rectangle {
+  fill: #82ca9d;
+}
+
+.CategoryChart .recharts-bar-rectangles .recharts-bar-rectangle {
+  fill: #93cefa;
+}
