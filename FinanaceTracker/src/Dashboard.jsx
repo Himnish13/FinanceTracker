@@ -58,35 +58,6 @@ const transactions = [
   { date: '2025-04-07', category: 'Petrol', amount: 65.75, mode: 'UPI', type: 'Expense' }
 ];
 
-// Aggregate transaction data by mode
-const modeCount = transactions.reduce((acc, txn) => {
-  const mode = txn.mode;
-  acc[mode] = acc[mode] ? acc[mode] + 1 : 1;
-  return acc;
-}, {});
-
-const modeData = Object.keys(modeCount).map(mode => ({
-  mode,
-  count: modeCount[mode]
-}));
-
-// Aggregate transactions by category
-const categoryTotals = transactions.reduce((acc, transaction) => {
-  const { category, amount } = transaction;
-  if (!acc[category]) {
-    acc[category] = 0;
-  }
-  acc[category] += amount;
-  return acc;
-}, {});
-
-const categoryData = Object.entries(categoryTotals).map(([category, total]) => ({
-  category,
-  total
-}));
-
-categoryData.sort((a, b) => a.total - b.total);
-
 // Goals data
 const goals = [
   {
@@ -224,40 +195,6 @@ const Dash = () => (
           </div>
         </div>
       </div>
-
-      <div className="graphs">
-  <div className="ModeChart">
-    <h3>Payment Mode Distribution</h3>
-    <div className="bar-chart">
-      <ResponsiveContainer width="100%" height={400}>
-        <BarChart data={modeData.sort((a, b) => a.count - b.count)} layout="vertical">
-          <YAxis type="category" dataKey="mode" />
-          <XAxis />
-          <Tooltip />
-          <Bar dataKey="count" fill="#FFDE4D" />
-        </BarChart>
-      </ResponsiveContainer>
-    </div>
-  </div>
-
-  <div className="CategoryChart">
-    <h3>Category-wise Spending</h3>
-    <div className="bar-chart">
-      <ResponsiveContainer width="100%" height={400}>
-        <BarChart data={categoryData} layout="vertical">
-          <XAxis type="number" domain={['auto', 'auto']} />
-          <YAxis type="category" dataKey="category" />
-          <Tooltip />
-          <Bar dataKey="total" fill="#93cefa" />
-        </BarChart>
-      </ResponsiveContainer>
-    </div>
-  </div>
-</div>
-
-
-
-
     </div>
   </>
 );
