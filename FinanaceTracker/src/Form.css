@@ -41,20 +41,24 @@ button {
 }
 
 button:first-of-type {
-    background-color: #ddd;
+    background-color:rgba(56, 109, 153, 0.55);
     color: #333;
 }
 
 button:last-of-type {
-    background-color: #4caf50;
+    background-color: rgb(88, 149, 167);
     color: white;
 }
 
 button:hover:last-of-type {
-    background-color: darkslategrey;
+    
+    background-color: #4caf50;
     
 }
 button:hover:first-of-type {
-    background-color: rgb(229, 236, 82);
+    background-color: rgb(236, 82, 82);
     
+}
+input{
+    margin-bottom: 2px;
 }
