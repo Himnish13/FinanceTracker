@@ -14,7 +14,7 @@ const Form=()=>{
             <input type="date" />
             <p>Amount</p>
             <input type="number" name="money" id="money" />
-            <p>For meal prep</p>
+            <p>Note</p>
             <textarea name="note" id="note" />
              <button>Cancel</button>
             <button>Add transcation</button>
