@@ -2,6 +2,7 @@ import "./navbar.css";
 import { useState } from "react";
 import Dash from "./Dashboard";
 import Over from "./Overview";
+import Form from "./Form";
 export default function Nav() {
 
   const [flag,Set]=useState(false);
@@ -22,6 +23,8 @@ const renderComponent = () => {
       return <Dash />;
     case "overview":
       return <Over />;
+    case "transactions":
+      return <Form/>
     // case "transactions":
     //   return <Transactions />;
     // case "goals":
@@ -67,7 +70,7 @@ const renderComponent = () => {
        <svg className="SideBarButtons" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M19 10.5714V18C19 19.1046 18.1046 20 17 20H6C4.89543 20 4 19.1046 4 18V7C4 5.89543 4.89543 5 6 5H13.4286"stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/> <circle cx="18" cy="6" r="1" stroke="#ffffff" strokeWidth="2" /><path d="M8 15L11 11L13 13L16 9"stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></g></svg>
        <p>{flag ? "Overview":""}</p>
        </div>
-       <div className="Dashboard">
+       <div className="Dashboard" onClick={() => setCurrentComponent("transactions")}>
        <svg className="SideBarButtons" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5.5" cy="7.5" r="1" stroke="#ffffff"/><path d="M8.5 6.5H19.5" stroke="#ffffff" strokeLinecap="round"/><path d="M8.5 8.5H14.5" stroke="#ffffff" strokeLinecap="round"/><circle cx="5.5" cy="12" r="1" stroke="#ffffff"/><path d="M8.5 11H16.5" stroke="#ffffff" strokeLinecap="round"/><path d="M8.5 13H15.5" stroke="#ffffff" strokeLinecap="round"/><circle cx="5.5" cy="16.5" r="1" stroke="#ffffff"/><path d="M8.5 15.5H18" stroke="#ffffff" strokeLinecap="round"/><path d="M8.5 17.5H12.5" stroke="#ffffff" strokeLinecap="round"/></svg>
        <p>{flag ? "Transactions":""}</p>
        </div>
